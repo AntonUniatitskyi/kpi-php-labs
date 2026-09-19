@@ -2,8 +2,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Строго за умовою: text, type, answersCount. 
-// Питання трохи наближені до реалій розробника :)
 $questions = [
     [
         'text' => 'Яку операційну систему ви використовуєте як основну для розробки?',
@@ -32,12 +30,10 @@ $questions = [
     ]
 ];
 
-// Типізована функція форматування
 function formatQuestion(array $question): string {
     return "<div class='q-title'>{$question['text']}</div> <div class='q-stats'>(Зібрано відповідей: {$question['answersCount']})</div>";
 }
 
-// Агрегатний показник
 $totalAnswers = 0;
 foreach ($questions as $question) {
     $totalAnswers += $question['answersCount'];
@@ -63,7 +59,6 @@ foreach ($questions as $question) {
         .badge-multiple { background-color: #e0f2fe; color: #0369a1; }
         .badge-text { background-color: #f1f5f9; color: #475569; }
         
-        /* Стилі для інтерактивних елементів */
         .options-group { display: flex; flex-direction: column; gap: 10px; }
         .radio-label { display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.95em; }
         .text-input { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 6px; font-size: 0.95em; box-sizing: border-box; font-family: inherit; }
@@ -82,7 +77,6 @@ foreach ($questions as $question) {
     <form action="#" method="GET" onsubmit="event.preventDefault(); alert('Це лише демо форми для Практичної №1!');">
         <?php foreach ($questions as $index => $question): ?>
             <?php 
-                // Умовна логіка
                 $isMultiple = ($question['type'] === 'multiple');
                 $typeLabel = $isMultiple ? 'Питання з варіантами відповіді' : 'Текстова відповідь';
                 $badgeClass = $isMultiple ? 'badge-multiple' : 'badge-text';
@@ -91,10 +85,8 @@ foreach ($questions as $question) {
             <div class="card">
                 <span class="badge <?= $badgeClass ?>"><?= $typeLabel ?></span>
                 
-                <!-- Вивід форматованого тексту питання -->
                 <?= formatQuestion($question) ?>
                 
-                <!-- Інтерактивна частина -->
                 <?php if ($isMultiple): ?>
                     <div class="options-group">
                         <label class="radio-label">
