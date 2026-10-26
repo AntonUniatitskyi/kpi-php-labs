@@ -1,0 +1,27 @@
+body { font-family: system-ui, -apple-system, sans-serif; margin: 20px; background: #f8f9fa; color: #212529; }
+.container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.summary { background: #f1f5f9; padding: 12px 18px; border-radius: 8px; margin-bottom: 20px; font-size: 0.95em; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid #e9ecef; vertical-align: middle; }
+th { background: #f8f9fa; font-size: 0.85em; text-transform: uppercase; color: #6c757d; }
+.badge { display: inline-block; padding: 4px 8px; border-radius: 6px; font-size: 0.75em; font-weight: 700; text-transform: uppercase; }
+.badge-multiple { background: #e0f2fe; color: #0369a1; }
+.badge-text { background: #f1f5f9; color: #475569; }
+.actions { display: flex; gap: 12px; align-items: center; }
+.actions form { margin: 0; }
+a { color: #0284c7; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.btn { display: inline-block; background: #0284c7; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 600; }
+.btn:hover { text-decoration: none; background: #0369a1; }
+.btn-link { background: none; border: none; padding: 0; color: #dc3545; cursor: pointer; font-size: 1em; font-family: inherit; }
+.btn-link:hover { text-decoration: underline; }
+.field { margin-bottom: 20px; }
+.field label { display: block; font-weight: 600; margin-bottom: 6px; }
+.text-input { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 6px; box-sizing: border-box; font-family: inherit; font-size: 1em; }
+.text-input:focus { outline: none; border-color: #0284c7; box-shadow: 0 0 0 3px rgba(2,132,199,0.1); }
+.has-error .text-input { border-color: #dc3545; }
+.error { color: #dc3545; font-size: 0.9em; margin-top: 6px; }
+.flash { padding: 12px 18px; border-radius: 8px; margin-bottom: 20px; }
+.flash-ok { background: #ecfdf5; border: 1px solid #d1fae5; color: #065f46; }
+.flash-err { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+.empty { color: #6c757d; text-align: center; padding: 20px; }

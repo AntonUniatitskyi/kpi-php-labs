@@ -5,5 +5,6 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.php82
     pkgs.php82Packages.composer
+    pkgs.mariadb
   ];
 }
