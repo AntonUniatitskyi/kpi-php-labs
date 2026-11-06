@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Онлайн-анкета</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+        h1 { margin-bottom: 1rem; }
+        #search { width: 100%; padding: .6rem; font-size: 1rem; box-sizing: border-box; margin-bottom: 1rem; }
+        .progress-wrap { margin-bottom: 1.5rem; }
+        #progress { width: 100%; height: 1.2rem; }
+        .card { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+        .card.done { background: #eef9ee; border-color: #8bc48b; }
+        .card h3 { margin: 0 0 .4rem; font-size: 1.05rem; }
+        .badge { display: inline-block; font-size: .75rem; background: #eee; border-radius: 4px; padding: .1rem .4rem; margin-bottom: .6rem; }
+        form { display: flex; gap: .5rem; }
+        form input, form select { flex: 1; padding: .5rem; font-size: 1rem; }
+        form button { padding: .5rem 1rem; cursor: pointer; }
+        .msg { margin: .5rem 0 0; font-size: .9rem; }
+        .msg.error { color: #b00020; }
+        .msg.ok { color: #1b6e1b; }
+        .error-box { color: #b00020; padding: 1rem; border: 1px solid #b00020; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Онлайн-анкета</h1>
+
+    <input id="search" type="search" placeholder="Фільтр за типом питання (text, rating, yesno)">
+
+    <div class="progress-wrap">
+        <progress id="progress" max="100" value="0"></progress>
+        <div id="progress-text">0 з 0 (0%)</div>
+    </div>
+
+    <div id="results"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

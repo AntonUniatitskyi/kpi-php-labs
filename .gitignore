@@ -4,3 +4,4 @@ result
 .idea/
 .vscode/
 .mysql/
+*.db
