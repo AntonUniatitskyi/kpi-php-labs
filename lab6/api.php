@@ -18,7 +18,6 @@ function fail(int $code, string $message): void {
     respond($code, ['success' => false, 'error' => $message]);
 }
 
-/** Читає тіло запиту: JSON з php://input, а якщо його немає - $_POST. */
 function readInput(): array {
     $raw = file_get_contents('php://input');
     if ($raw !== false && trim($raw) !== '') {
@@ -26,7 +25,6 @@ function readInput(): array {
         if (is_array($decoded)) {
             return $decoded;
         }
-        // не JSON - можливо, це звичайна форма
         if (!empty($_POST)) {
             return $_POST;
         }
@@ -40,7 +38,6 @@ function normalizeQuestion(array $row): array {
     return $row;
 }
 
-// ---------- обробники ----------
 
 function listQuestions(PDO $pdo): void {
     $rows = $pdo->query('SELECT id, text, type FROM questions ORDER BY id')->fetchAll();
@@ -128,7 +125,6 @@ try {
         getQuestion($pdo, $id);
     }
 
-    // POST
     if ($action === null) {
         createQuestion($pdo);
     } elseif ($action === 'stats') {
