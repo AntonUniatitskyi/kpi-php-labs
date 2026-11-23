@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Каталог тварин і акваріумних риб</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Каталог тварин і акваріумних риб</h1>
+  <p class="lead">Кожен запис у каталозі — це одна рибка в акваріумі.</p>
+
+  <section class="aquarium">
+    <canvas id="aquarium" width="720" height="260" aria-label="Анімований акваріум: кількість рибок дорівнює кількості записів"></canvas>
+    <div class="aquarium__bar">
+      <p class="aquarium__count" id="count"></p>
+      <button type="button" class="ghost" id="toggle">Стоп</button>
+    </div>
+  </section>
+
+  <form id="add-form">
+    <input id="name" placeholder="Назва (наприклад, Нео)" required maxlength="40">
+    <select id="species" aria-label="Вид">
+      <option>Золота рибка</option>
+      <option>Неон</option>
+      <option>Гуппі</option>
+      <option>Півник</option>
+      <option>Інше</option>
+    </select>
+    <button type="submit">Додати</button>
+  </form>
+
+  <ul id="list"></ul>
+</main>
+
+<script src="data.js"></script>
+<script src="aquarium.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
